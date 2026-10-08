@@ -6,6 +6,9 @@
 
 /* The devicetree node identifier for the "led0" alias. */
 #define LED_NODE DT_ALIAS(led0)
+//#define LED_NODE DT_NODELABEL(red_led_0) //changing the node label to red_led_0 with the help of  devicetree but in this board there is only one user led "led0".
+
+//#define LED_NODE DT_PATH(leds, ;led_1)  PATH : /leds/led_1  //changing the node label to blue_led_1 with the help of devicetree but in this board there is only one user led "led0".
 
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 

@@ -1,0 +1,13 @@
+//we cannot use this because nucleo_f466re board has only one user led "led0", i.e green colour and that can only be controlled by device tree.
+
+/{
+    leds {
+    
+        red_led_0: led_0 {
+            gpios = < &gpioa 6 GPIO_ACTIVE_LOW>; 
+        };
+        blue_led_1: led_1 {
+            gpios = < &gpioa 7 GPIO_ACTIVE_LOW>; 
+        };
+    };
+};

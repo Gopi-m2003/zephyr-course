@@ -1,0 +1,9 @@
+//use the below command to build the app with the overlay file.
+// west build -b nucleo_f446re -p always app -- -DEXTRA_DTC_OVERLAY_FILE="boards/app.overlay"
+//then use --> west build -t menuconfig
+//then use --> west build --runner openocd
+/{
+    aliases {
+        app-led = &green_led_2;    
+    };
+};

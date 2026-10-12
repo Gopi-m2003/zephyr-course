@@ -5,10 +5,12 @@
 //#define SLEEP_TIME_MS 1000 //This variable is replaced by the kconfig.
 
 /* The devicetree node identifier for the "led0" alias. */
-#define LED_NODE DT_ALIAS(led0)
+//#define LED_NODE DT_ALIAS(led0)   //This is the default alias for the user led "led0" in this board.
 //#define LED_NODE DT_NODELABEL(red_led_0) //changing the node label to red_led_0 with the help of  devicetree but in this board there is only one user led "led0".
 
 //#define LED_NODE DT_PATH(leds, ;led_1)  PATH : /leds/led_1  //changing the node label to blue_led_1 with the help of devicetree but in this board there is only one user led "led0".
+
+#define LED_NODE DT_ALIAS(app_led)  //This is added in the devicetree overlay (app.overlay) file to change the alias to app_led with the help of devicetree.
 
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 
@@ -30,7 +32,8 @@ int main(void)
         led_state = !led_state;
         LOG_INF("LED state: %s", led_state ? "ON" : "OFF");
         //k_msleep(SLEEP_TIME_MS); //kconfig variable is added.
-        k_msleep(CONFIG_LED_BLINK_SLEEP_TIME_MS);
+        //k_msleep(CONFIG_LED_BLINK_SLEEP_TIME_MS); //New kconfig variable is added for the lecture 4, for the led sleep duration.
+        k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
     }
     return 0;
 }

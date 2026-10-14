@@ -10,7 +10,9 @@
 
 //#define LED_NODE DT_PATH(leds, ;led_1)  PATH : /leds/led_1  //changing the node label to blue_led_1 with the help of devicetree but in this board there is only one user led "led0".
 
-#define LED_NODE DT_ALIAS(app_led)  //This is added in the devicetree overlay (app.overlay) file to change the alias to app_led with the help of devicetree.
+//#define LED_NODE DT_ALIAS(app_led)  //This is added in the devicetree overlay (app.overlay) file to change the alias to app_led with the help of devicetree.
+
+#define LED_NODE DT_ALIAS(led0) 
 
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 
@@ -37,3 +39,6 @@ int main(void)
     }
     return 0;
 }
+
+
+

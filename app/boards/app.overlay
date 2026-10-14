@@ -4,6 +4,10 @@
 //then use --> west build --runner openocd
 /{
     aliases {
-        app-led = &green_led_2;    
+        app-led = &green_led_2;
     };
 };
+
+
+//west build -b our_board -p always app -- -DEXTRA_DTC_OVERLAY_FILE="boards/app.overlay"
+// use the above command to use the custom board (our_board) with the app_led as an DT_ALIAS. To build it normally change the DT_ALIAS to led0.

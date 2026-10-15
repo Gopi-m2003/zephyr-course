@@ -1,0 +1,4 @@
+#Created by Gopi
+
+config BOARD_MY_OWN_BOARD		
+	select SOC_STM32F446XX

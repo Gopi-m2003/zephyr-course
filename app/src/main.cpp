@@ -26,7 +26,8 @@ int main(void)
 
     if (gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE) < 0) return 0;
 
-    LOG_INF("Hello Guys, This project is developed by Gopi");
+    //LOG_INF("Hello Guys, This project is developed by Gopi");
+    LOG_INF("Hello World! Application started on custom board.");
 
     while (1) {
         if (gpio_pin_toggle_dt(&led) < 0) return 0;

@@ -1,0 +1,10 @@
+board:
+  name: my_own_board   #Created by Gopi
+  full_name: My Own Board from Scratch
+  vendor: Gopi Boards
+  socs:
+    - name: stm32f446xx   
+
+
+# west build -b my_own_board -p always /home/gopi/deps/zephyr/samples/basic/blinky -- -DBOARD_ROOT=/home/gopi/zephyr-course/app
+# The above command is used to run the zephyr build system for the my_own_board board. It specifies the board to build for, the path to the sample application (blinky), and sets the BOARD_ROOT variable to point to the location of the board definition files. The -p always option ensures that the build process is always executed, even if there are no changes detected in the source files.

@@ -28,6 +28,7 @@ int main(void)
 
     //LOG_INF("Hello Guys, This project is developed by Gopi");
     LOG_INF("Hello World! Application started on custom board.");
+    LOG_INF("Board Initialized");
 
     while (1) {
         if (gpio_pin_toggle_dt(&led) < 0) return 0;
